@@ -11,27 +11,30 @@ import { ExtAngularBootstrapComponent } from '@sencha/ext-angular/esm5/lib/ext-a
 //import { ExtAngularBootstrapComponent } from '@sencha/ext-angular'
 
 
-import { AppComponent } from './app.component'
-import { HomeComponent } from './Home/home.component'
-import { AboutComponent } from './About/about.component'
-import { NavMenuComponent } from './NavMenu/navmenu.component'
+// import { AppComponent } from './app.component'
+import { Login } from './Login/login.component';
+// import { HomeComponent } from './Home/home.component'
+// import { AboutComponent } from './About/about.component'
+// import { NavMenuComponent } from './NavMenu/navmenu.component'
 
 const routes: Route[] = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: 'home', component: HomeComponent },
+  // { path: 'about', component: AboutComponent }
 ]
 export const routingModule: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: true});
 
 @NgModule({
   imports:         [BrowserModule, ExtAngularModule, routingModule],
-  declarations:    [ExtAngularBootstrapComponent, AppComponent, HomeComponent, AboutComponent, NavMenuComponent],
+  //declarations:    [ExtAngularBootstrapComponent, AppComponent, HomeComponent, AboutComponent, NavMenuComponent],
+  declarations:    [ExtAngularBootstrapComponent, Login],
   providers:       [ExtAngularBootstrapService],
-  entryComponents: [AppComponent],
+  entryComponents: [Login],
   bootstrap:       [ExtAngularBootstrapComponent]
 })
 export class AppModule {
   constructor(extAngularService : ExtAngularBootstrapService) {
-    extAngularService.setBootStrapComponent(AppComponent)
+    extAngularService.setBootStrapComponent(Login)
   }
 }
+       

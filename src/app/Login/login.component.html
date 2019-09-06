@@ -1,0 +1,10 @@
+<container padding="10" [fitToParent]="true">
+    <container>
+      <formpanel #item title="{{this.formTitle}}">
+        <textfield #item label="User Name"></textfield>
+        <textfield #item label="Password"></textfield>
+        <button #item  [handler]="this.onLoginFunction" ui="action raised" text="Submit"></button>
+    </formpanel>
+    </container>
+  </container>
+  
